@@ -8,22 +8,22 @@ type SearchProps = {
 const Search = ({ loadUser }: SearchProps) => {
   const [username, setUsername] = useState("");
   return (
-    <div className=" bg-blue-900 flex flex-col items-center justify-center gap-4 p-4">
+    <div className=" bg-slate-600 flex flex-col items-center justify-center mb-4 gap-4 p-8 rounded-lg">
       <h2 className="">Busque por usuário</h2>
-      <p className="">Conheça seus melhores repositórios</p>
-      <div className="flex items-center gap-2 bg-white p-2 rounded-lg">
+      <p className="text-gray-400">Conheça seus melhores repositórios</p>
+      <div className="flex items-center gap-2 border-none  text-slate-500 p-2 rounded-lg">
         <input
           type="text"
           placeholder="Digite seu nome de usuário"
-          className=""
+          className="bg-white px-4 py-2 rounded-lg w-full focus:outline-none focus:ring-2 focus:ring-slate-500 transition-colors duration-300"
           onChange={(e) => setUsername(e.target.value)}
           value={username}
         />
         <button
-          className="px-4 py-2 rouded rouded text-black"
+          className="bg-slate-800 px-4 py-2 rounded-lg text-white cursor-pointer hover:bg-slate-700 transition-colors duration-300"
           onClick={() => loadUser(username)}
         >
-          <BsSearch className="inline-block mr-2" />
+          <BsSearch className="inline-block " />
         </button>
       </div>
     </div>

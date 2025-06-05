@@ -21,6 +21,7 @@ const Home = () => {
       followers,
       following,
     };
+    ("");
 
     setUser(userData);
   };
