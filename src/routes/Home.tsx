@@ -1,5 +1,11 @@
-const Home = (props: Props) => {
-  return <div>Home</div>;
+import Search from "../components/Search";
+
+const Home = () => {
+  return (
+    <div>
+      <Search />
+    </div>
+  );
 };
 
 export default Home;
