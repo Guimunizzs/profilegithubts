@@ -1,6 +1,9 @@
-import Search from "../components/Search";
 import { useState } from "react";
 import { type UserProps } from "../types/user";
+
+// components
+import User from "../components/User";
+import Search from "../components/Search";
 
 const Home = () => {
   const [user, setUser] = useState<UserProps | null>(null);
@@ -29,6 +32,7 @@ const Home = () => {
   return (
     <div>
       <Search loadUser={loadUser} />
+      {user && <User {...user} />}
     </div>
   );
 };
