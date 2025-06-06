@@ -7,6 +7,13 @@ type SearchProps = {
 
 const Search = ({ loadUser }: SearchProps) => {
   const [username, setUsername] = useState("");
+
+  const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
+    if (e.key === "Enter") {
+      loadUser(username);
+    }
+  };
+
   return (
     <div className=" bg-slate-600 flex flex-col items-center justify-center mb-4 gap-4 p-8 rounded-lg">
       <h2 className="">Busque por usuário</h2>
@@ -17,6 +24,7 @@ const Search = ({ loadUser }: SearchProps) => {
           placeholder="Digite seu nome de usuário"
           className="bg-white px-4 py-2 rounded-lg w-full focus:outline-none focus:ring-2 focus:ring-slate-500 transition-colors duration-300"
           onChange={(e) => setUsername(e.target.value)}
+          onKeyDown={handleKeyDown}
           value={username}
         />
         <button
