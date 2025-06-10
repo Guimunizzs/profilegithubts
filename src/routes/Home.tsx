@@ -41,7 +41,7 @@ const Home = () => {
   };
 
   return (
-    <div>
+    <div className="min-h-screen flex flex-col items-center my-8">
       <Search loadUser={loadUser} />
       {user && <User {...user} />}
       {error && <Error />}

@@ -19,23 +19,25 @@ const User = ({
       />
       <h2 className="text-xl font-bold">{login}</h2>
       <p className="text-gray-400">
-        <MdLocationPin className="inline-block mr-1" />
+        <MdLocationPin className="inline-block mr-1 " />
         <span>{location}</span>
       </p>
       <div className="flex gap-4 mt-4">
         <div className="text-center">
           <p>Seguidores</p>
-          <p>{followers}</p>
+          <p className="bg-blue-400 rounded-lg my-4">{followers}</p>
         </div>
         <div className="text-center">
           <p>Seguindo</p>
-          <p>{following}</p>
+          <p className="bg-blue-400 rounded-lg my-4">{following}</p>
         </div>
       </div>
       <Link
         to={`/`}
         className="bg-slate-800 px-4 py-2 rounded-lg text-white cursor-pointer hover:bg-slate-700 transition-colors duration-300"
-      />
+      >
+        Ver melhores projetos
+      </Link>
     </div>
   );
 };
