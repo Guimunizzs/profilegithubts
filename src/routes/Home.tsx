@@ -5,46 +5,54 @@ import { type UserProps } from "../types/user";
 import User from "../components/User";
 import Search from "../components/Search";
 import Error from "../components/Error";
+import Loading from "../components/Loading";
 
 const Home = () => {
   const [user, setUser] = useState<UserProps | null>(null);
   const [error, setError] = useState<boolean | null>(null);
+  const [loading, setLoading] = useState<boolean>(false);
 
   const loadUser = async (username: string) => {
     setError(false);
     setUser(null);
+    setLoading(true);
 
-    const res = await fetch(`https://api.github.com/users/${username}`);
+    try {
+      const res = await fetch(`https://api.github.com/users/${username}`);
 
-    const data = await res.json();
+      const data = await res.json();
 
-    if (res.status === 404) {
+      if (res.status === 404) {
+        setError(true);
+        setUser(null);
+        return;
+      }
+
+      const { avatar_url, login, location, followers, following } = data;
+
+      const userData: UserProps = {
+        avatar_url,
+        login,
+        location,
+        followers,
+        following,
+      };
+      ("");
+
+      setUser(userData);
+    } catch (error) {
       setError(true);
-      setUser(null);
-      return;
+    } finally {
+      setLoading(false);
     }
-
-    console.log(data);
-
-    const { avatar_url, login, location, followers, following } = data;
-
-    const userData: UserProps = {
-      avatar_url,
-      login,
-      location,
-      followers,
-      following,
-    };
-    ("");
-
-    setUser(userData);
   };
 
   return (
     <div className="min-h-screen flex flex-col items-center my-8">
       <Search loadUser={loadUser} />
-      {user && <User {...user} />}
-      {error && <Error />}
+      {loading && <Loading />}
+      {user && !loading && <User {...user} />}
+      {error && !loading && <Error />}
     </div>
   );
 };
