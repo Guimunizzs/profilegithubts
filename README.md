@@ -60,4 +60,4 @@ Este projeto está sob a licença MIT.
 
 ---
 
-Feito com ❤️ por [Guilherme Muniz]
+Feito por [Guilherme Muniz]
