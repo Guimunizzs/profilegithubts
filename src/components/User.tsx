@@ -33,7 +33,8 @@ const User = ({
         </div>
       </div>
       <Link
-        to={`/`}
+        to={`/${login}/projects`}
+        state={{ username: login }}
         className="bg-slate-800 px-4 py-2 rounded-lg text-white cursor-pointer hover:bg-slate-700 transition-colors duration-300"
       >
         Ver melhores projetos
