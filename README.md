@@ -26,6 +26,10 @@ Uma aplicação React + TypeScript que permite buscar perfis de usuários do Git
   - Número de estrelas
   - Número de forks
 
+## 🚀 Deploy
+
+O projeto está disponível em produção através do Vercel. Você pode acessá-lo aqui: [Profile GitHub](https://profilegithubts.vercel.app/)
+
 ## 🔧 Instalação
 
 1. Clone o repositório:
@@ -60,4 +64,4 @@ Este projeto está sob a licença MIT.
 
 ---
 
-Feito por [Guilherme Muniz]
+Feito por [Guilherme Muniz](https://github.com/Guimunizzs)
